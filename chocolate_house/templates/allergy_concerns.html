@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergy Concerns</title>
+    <style>
+        /* Your existing styles here */
+    </style>
+</head>
+<body>
+    <h1>Allergy Concerns</h1>
+    <form method="POST">
+        <label for="allergen">Enter Allergen:</label>
+        <input type="text" name="concern" id="allergen" placeholder="e.g., Peanuts, Milk, Eggs" required><br>
+        
+        <input type="submit" value="Submit Concern">
+    </form>
+
+    <!-- Display any caution messages if there are relevant flavors -->
+    {% if caution_flavors %}
+        <h2>Caution!</h2>
+        <p>The following seasonal flavors contain the allergen you entered:</p>
+        <ul>
+            {% for flavor in caution_flavors %}
+                <li>{{ flavor }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No seasonal flavors found containing your entered allergen.</p>
+    {% endif %}
+    
+    <ul>
+        {% for concern in concerns %}
+            <li>{{ concern.concern }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>

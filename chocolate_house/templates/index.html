@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate House</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4A2C2A;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        li {
+            background: #ffffff;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        a {
+            color: #4A2C2A;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #9A6A6A;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Chocolate House</h1>
+    <ul>
+        <li><a href="{{ url_for('seasonal_flavors') }}">Seasonal Flavors</a></li>
+        <li><a href="{{ url_for('ingredient_inventory') }}">Ingredient Inventory</a></li>
+        <li><a href="{{ url_for('customer_suggestions') }}">Customer Suggestions</a></li>
+        <li><a href="{{ url_for('allergy_concerns') }}">Allergy Concerns</a></li>
+    </ul>
+    <footer>
+        &copy; 2024 Chocolate House. All rights reserved.
+    </footer>
+</body>
+</html>
