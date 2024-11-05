@@ -27,3 +27,36 @@ Then, Run the application.
 Use python main.py
 
 Open your web browser and go to http://127.0.0.1:5000 to start using the system.
+
+DOCKER INSTRUCTIONS
+# Use an official Python runtime as a base image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install any necessary dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire application code to the container
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Define the command to run the application
+CMD ["python", "main.py"]
+
+Build the Docker image
+Open a terminal, navigate to your project directory, and run the following command to build the Docker image:
+docker build -t chocolate-house-app .
+
+Run the Docker container
+After building the image, run the following command to start the container:
+docker run -p 5000:5000 chocolate-house-app
+
+This command maps port 5000 on your local machine to port 5000 in the container, allowing you to access the app at http://localhost:5000.
+
