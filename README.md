@@ -3,7 +3,10 @@ Features Ingredient inventory: It keeps track of all the ingredients with its na
 Allergy Issues: Input allergens such as peanuts or milk, and it will notify you if the seasonal flavors have that allergy.
 
 Clone the Repository: Download or clone the project files to your local machine.
+https://github.com/Bhargavinm234/chocolate_house.git
+
 Install Dependencies: Run pip install -r requirements.txt to install the necessary packages.
+pip install flask
 
 Requirements
 Python 3.7+: Ensure Python is installed.
